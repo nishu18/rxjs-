@@ -1,0 +1,20 @@
+.manual-data {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .unmanual-data {
+    background-color: #eaeaea;
+    padding: 10px;
+  }
+  
+  .unmanual-data ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .unmanual-data li {
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,56 @@
+<div class="manual-data">
+  <ul id="elContainer"></ul>
+  <h2>Manual Data 1</h2>
+  <h2>Manual Data 2</h2>
+
+  <h2>Manual Data 3</h2>
+
+</div>
+
+<div class="unmanual-data">
+  <h2>Unmanual Data</h2>
+  <ul>
+    <li>Data 1</li>
+    <li>Data 2</li>
+    <li>Data 3</li>
+  </ul>
+</div>
+
+<div>
+  <h2>Observable Values:</h2>
+  <ul>
+    <li *ngFor="let value of values">{{ value }}</li>
+  </ul>
+</div>
+<!-- <app-operator></app-operator>
+<app-form></app-form>
+<app-observe></app-observe> -->
+
+<app-form></app-form>
+
+<app-pipe ></app-pipe>
+<app-timer></app-timer>
+
+<h1>Lazzy loading</h1>
+<h3>admin links</h3>
+<ul>
+  <li>
+    <a routerLink="admin/login" > Login</a>
+  </li>
+  <li>
+    <a routerLink="admin/list" > List</a>
+  </li>
+</ul>
+
+<br>
+<h3>user links</h3>
+<ul>
+  <li>
+    <a routerLink="user/login" > Login</a>
+  </li>
+  <li>
+    <a routerLink="user/list" > List</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<p>pipe works!</p>
+<h1></h1>
+<h1>Data Component</h1>
+<ul>
+  <li *ngFor="let item of data$ | async">{{ item }}</li>
+</ul>
+
+<div>
+    <h1>counter</h1>
+    <p>{{counter$ | async}}</p>
+</div>
+
+<h1>Users</h1>
+<ul>
+  <li *ngFor="let user of users$ | async">{{ user.name }} ({{ user.email }})</li>
+</ul>

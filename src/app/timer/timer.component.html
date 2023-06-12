@@ -1,0 +1,33 @@
+<!-- <div>
+    <h1>Timer: {{ elapsedTime | number: '1.0-0' }}</h1>
+    <ng-container *ngIf="!isTimerRunning">
+      <button (click)="startTimer()">Start</button>
+    </ng-container>
+    <ng-container *ngIf="isTimerRunning">
+      <button (click)="pauseTimer()">Pause</button>
+      <button (click)="resetTimer()">Reset</button>
+    </ng-container>
+    <ng-container *ngIf="isTimerPaused">
+      <button (click)="resumeTimer()">Resume</button>
+      <button (click)="resetTimer()">Reset</button>
+    </ng-container>
+  </div>
+   -->
+
+<div>
+    <div class="timer-container">
+        <h1 class="timer">Timer: {{ minute.toString() }}:{{ second.toString().padStart(2, '0') }}</h1>
+      </div>    <div *ngIf="!isTimerRunning">
+        <button (click)="startTimer()">Start</button>
+    </div>
+
+    <div *ngIf="isTimerRunning && !isTimerPaused">
+        <button (click)="pauseTimer()">Pause</button>
+        <button (click)="resetTimer()">Reset</button>
+    </div>
+
+    <div *ngIf="isTimerPaused">
+        <button (click)="resumeTimer()">Resume</button>
+        <button (click)="resetTimer()">Reset</button>
+
+    </div>
