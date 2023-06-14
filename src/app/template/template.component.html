@@ -1,0 +1,20 @@
+<p>template works!</p>
+<form #myForm="ngForm" (ngSubmit)=userLogin(myForm.value)>
+    <input type="text" required #name="ngModel" placeholder="enter name " name ="name" [(ngModel)]="taskName"><br><br>
+    <span *ngIf="name.invalid && name.touched">please enter a valid input</span><br>
+    <input type="password " required #password="ngModel" minlength="5" placeholder="password" name="password" ngModel><br>
+    <span *ngIf="password.invalid && password.touched">please enter a valid input</span><br>
+    <input type="text" required #email="ngModel" placeholder="enter email " name ="email" [(ngModel)]="taskEmail"><br><br>
+    <span *ngIf="email.invalid && email.touched">please enter a valid input</span><br>
+   
+
+    <button type="submit" [disabled]="myForm.invalid">Login</button>
+</form>
+
+<p>name:{{item.name}}</p>
+<p>email:{{item.email}}</p>
+
+ 
+
+
+

@@ -10,6 +10,8 @@ import { FormComponent } from './form/form.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeComponent } from './pipe/pipe.component';
 import { TimerComponent } from './timer/timer.component';
+import { TemplateComponent } from './template/template.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { TimerComponent } from './timer/timer.component';
     OperatorComponent,
     FormComponent,
     PipeComponent,
-    TimerComponent
+    TimerComponent,
+    TemplateComponent,
+    ReactiveComponent
   ],
   // exports: [FormComponent],
 

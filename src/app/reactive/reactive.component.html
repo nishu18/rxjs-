@@ -1,0 +1,17 @@
+<p>reactive works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" placeholder="name" name="user" formControlName="user"> <br>
+    <span *ngIf="user && user.invalid && user.touched">this filled required</span><br>
+    <input type="text" placeholder="email" name="email" formControlName="email" > <br>
+    <span *ngIf="email && email.invalid && email.touched">this filled required</span><br>
+
+    <button [disabled]="loginForm.invalid">submit</button>
+
+
+
+</form>
+
+<br>
+
+<p>{{formData.user}}</p>
+<p>{{formData.email}}</p>
