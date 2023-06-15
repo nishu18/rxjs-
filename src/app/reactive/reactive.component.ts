@@ -7,6 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reactive.component.css']
 })
 export class ReactiveComponent {
+  formSubmissions: any[] = [];
+
 
   formData: any = {};
    loginForm=new FormGroup({
@@ -15,9 +17,11 @@ export class ReactiveComponent {
    })
 
    loginUser(){
-    console.log(this.loginForm.value)
-    this.formData=this.loginForm.value
-    this.loginForm.reset(); 
+    if (this.loginForm.valid) {
+      this.formSubmissions.push(this.loginForm.value);
+      console.log(this.formSubmissions);
+      this.loginForm.reset();
+    }
    }
 
    get user(){

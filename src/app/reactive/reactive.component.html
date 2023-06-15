@@ -1,4 +1,4 @@
-<p>reactive works!</p>
+<!-- <p>reactive works!</p>
 <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
     <input type="text" placeholder="name" name="user" formControlName="user"> <br>
     <span *ngIf="user && user.invalid && user.touched">this filled required</span><br>
@@ -11,7 +11,48 @@
 
 </form>
 
-<br>
+<br> -->
 
-<p>{{formData.user}}</p>
-<p>{{formData.email}}</p>
+
+
+<form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div style="display: flex; flex-direction: column; margin: 4px 10px; align-items: center; justify-content: center;">
+        <mat-form-field class="example-full-width">
+      
+            <mat-label>Name</mat-label>
+            <input type="email" matInput name="user" formControlName="user"
+                   placeholder="name">
+            <mat-error *ngIf="user && user.invalid && user.touched">
+                Name is <strong>required</strong>        </mat-error>
+            
+          </mat-form-field>
+    
+    
+        <mat-form-field class="example-full-width">
+          
+          <mat-label>Email</mat-label>
+          <input type="email" matInput name="email" formControlName="email"
+                 placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="email && email.invalid && email.touched">
+            Please enter a valid email address
+          </mat-error>
+        
+         </mat-form-field> 
+
+         <button mat-flat-button color="primary" [disabled]="loginForm.invalid">Primary</button>
+
+    </div>
+  
+  </form>
+
+  <mat-card style="margin: 4px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <mat-card-content *ngFor="let submission of formSubmissions">
+      <div style=" margin-bottom: 8px; background-color:gray; margin-left: 0px;">
+        <p style="  margin-left: 0px;">name:<span> {{submission.user}} </span></p>
+        <p style="margin-left: 0px;"> email: <span> {{submission.email}} </span></p>
+      </div>
+     
+    </mat-card-content>
+  </mat-card>
+  
+  

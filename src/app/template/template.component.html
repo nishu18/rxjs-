@@ -1,4 +1,4 @@
-<p>template works!</p>
+<!-- <p>template works!</p>
 <form #myForm="ngForm" (ngSubmit)=userLogin(myForm.value)>
     <input type="text" required #name="ngModel" placeholder="enter name " name ="name" [(ngModel)]="taskName"><br><br>
     <span *ngIf="name.invalid && name.touched">please enter a valid input</span><br>
@@ -11,10 +11,53 @@
     <button type="submit" [disabled]="myForm.invalid">Login</button>
 </form>
 
-<p>name:{{item.name}}</p>
+<p>name:{{item.name}}</p> 
 <p>email:{{item.email}}</p>
 
  
 
 
+ -->
 
+zxzxzx  
+<form #myForm="ngForm" (ngSubmit)=userLogin(myForm.value)>
+    <div style="display: flex; flex-direction: column; margin: 4px 10px; align-items: center; justify-content: center;">
+        <mat-form-field class="example-full-width">
+      
+            <mat-label>Name</mat-label>
+            <input type="name" matInput required #name="ngModel" placeholder="enter name " name ="name" [(ngModel)]="taskName"
+                   placeholder="name">
+            <mat-error *ngIf="name.invalid && name.touched">
+                Name is <strong>required</strong>        </mat-error>
+            
+          </mat-form-field>
+    
+    
+        <mat-form-field class="example-full-width">
+          
+          <mat-label>Email</mat-label>
+          <input type="email" matInput required #email="ngModel"  name ="email" [(ngModel)]="taskEmail"
+                 placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="email.invalid && email.touched">
+            Please enter a valid email address
+          </mat-error>
+        
+         </mat-form-field> 
+
+         <button mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">Primary</button>
+
+    </div>
+  
+  </form>
+
+  <mat-card style="margin: 4px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <mat-card-content >
+        <div *ngFor="let entry of item">
+            <p style="margin-bottom: 8px;">Name: {{ entry.name }}</p>
+            <p>Email: {{ entry.email }}</p>
+          </div>
+    </mat-card-content>
+  </mat-card>
+  
+  
+  
